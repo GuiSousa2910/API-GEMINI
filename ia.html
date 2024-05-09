@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat com IA</title>
+    <link rel="stylesheet" href="ia.css">
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="nav">
+            <img src="assets/galinha.png" alt="galinha">
+            <div class="nav-list">
+                <div class="sobre">
+                    <a href="http://localhost:3000/ia.html">dasda</a>
+                    <a href="#espaco" onclick="descer()">Sobre</a>
+                    <a href="#divisao" onclick="descer()">Oque vou fazer?</a>
+                    <a href="#dev" onclick="descer()">Desenvolvedor</a>
+                </div>
+                <div class="login">
+                    <a href="cadastro.html" id="junte-se">Junte-se a Nós</a>
+                </div>
+            </div>
+        </div>
+    <a href="http://localhost:3333/index.html">asdada</a>
+    <h1>Chat com IA</h1>
+    <textarea type="text" id="userInput" placeholder="Digite sua mensagem"></textarea>
+    <button id="sendButton">Enviar</button>
+    <div id="response"></div>
+
+    <script>
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendButton');
+        const responseDiv = document.getElementById('response');
+
+        sendButton.addEventListener('click', async () => {
+            const text = userInput.value;
+
+            const response = await fetch(`/generate-text?text=${encodeURIComponent(text)}`);
+            const data = await response.text();
+            responseDiv.innerText = data;
+        });
+    </script>
+</body>
+
+</html>
