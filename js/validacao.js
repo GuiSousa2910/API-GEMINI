@@ -19,5 +19,3 @@ function verificar() {
         document.getElementById('sendButton').setAttribute('disabled', true);
     }
 }
-
-

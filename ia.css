@@ -154,8 +154,8 @@ textarea::-webkit-scrollbar {
 }
 
 button {
-    height: 7.5vh;
-    width: 4vw;
+    height: 50px;
+    width: 50px;
     background-color: #63fd63;
     border-radius: 100%;
     border: none;
@@ -173,6 +173,9 @@ button:disabled {
     background-color: grey;
     border: black 2px solid;
     cursor: auto;
+}
+button .botao-img{
+    border-radius: 100%;
 }
 
 ::-webkit-scrollbar {

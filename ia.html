@@ -27,27 +27,16 @@
                 <div class="textos-input" onchange="verificar()">
                     <textarea oninput="abilitar(), verificar()" onfocus="abilitar()" rows="5" type="text" id="userInput"
                         placeholder="Digite sua mensagem"></textarea>
-                    <button onclick="carregar()" onkeydown="carregar()" id="sendButton" disabled><img src="assets/next.png"
-                            alt=""></button>
+                    <button onclick="carregar()" onkeydown="carregar()" id="sendButton" disabled><img
+                            src="assets/next.png" alt="" class="botao-img"></button>
                 </div>
                 <img id="carregamento" src="assets/Ellipsis@1x-4.8s-200px-200px (2).gif" alt="">
                 <div id="response"></div>
             </div>
         </div>
-        <script src="/js/validacao.js"></script>
+        <script src="js/validacao.js"></script>
+        <script src="js/carregamento.js"></script>
         <script>
-
-            function apagar() {
-                document.getElementById('tudao').style.paddingBottom = '10%';
-                document.getElementById('carregamento').style.display = 'none';
-                document.getElementById('response').style.display = 'none';
-            }
-
-            function carregar() {
-                let car = document.getElementById('carregamento').style.display = 'flex';
-                document.getElementById('response').style.display = 'none';
-                document.getElementById('tudao').style.paddingBottom = '0%';
-            }
 
             const userInput = document.getElementById('userInput');
             const sendButton = document.getElementById('sendButton');
@@ -57,7 +46,7 @@
                 const text = userInput.value;
                 const response = await fetch(`/generate-text?text=${encodeURIComponent(text)}`);
                 const data = await response.text();
-                let car = document.getElementById('carregamento').style.display = 'none';
+                document.getElementById('carregamento').style.display = 'none';
                 document.getElementById('response').style.display = 'flex';
                 responseDiv.innerText = data;
             });
