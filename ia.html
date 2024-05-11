@@ -15,7 +15,7 @@
             <img src="assets/galinha.png" alt="galinha">
             <div class="nav-list">
                 <div class="sobre">
-                    <a href="http://localhost:3333/indexLogado.html">Home</a>
+                    <a onclick="testar()" href="http://localhost:3333/indexLogado.html">Home</a>
                 </div>
             </div>
         </div>
@@ -36,7 +36,13 @@
         </div>
         <script src="js/validacao.js"></script>
         <script src="js/carregamento.js"></script>
+        <script src="server.js"></script>
         <script>
+
+            function testar() {
+                // escreverArquivoJSON()
+                server.escreverArquivoJSON()
+            }
 
             const userInput = document.getElementById('userInput');
             const sendButton = document.getElementById('sendButton');

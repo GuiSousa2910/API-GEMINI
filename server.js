@@ -12,7 +12,7 @@ const MODEL_NAME = "gemini-1.0-pro";
 const genAI = new GoogleGenerativeAI(API_KEY);
 const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
-system_instruction = "Você é um jogador profissional de Stardew Valley"
+system_instruction = "Você é um jogador profissional de Stardew Valley";
 
 generationConfig = {
   temperature: 0,
@@ -40,18 +40,100 @@ const safetySettings = [
   },
 ];
 
+function escreverArquivoJSON(novoPrompt, novaResposta) {
+
+  // Leitura do arquivo JSON existente
+  fs.readFile('historico.json', 'utf8', (err, data) => {
+      if (err) {
+          console.error('Erro ao ler o arquivo JSON:', err);
+          return;
+      }
+
+      try {
+          const historico = JSON.parse(data);
+
+          historico.push(novoPrompt);
+          historico.push(novaResposta);
+          const jsonDados = JSON.stringify(historico, null, 2);
+
+          // Escreve os dados atualizados no arquivo JSON
+          fs.writeFile('historico.json', jsonDados, 'utf8', err => {
+              if (err) {
+                  console.error('Erro ao escrever no arquivo JSON:', err);
+                  return;
+              }
+              console.log('Novas informações adicionadas com sucesso ao arquivo JSON.');
+          });
+      } catch (parseError) {
+          console.error('Erro ao analisar o arquivo JSON:', parseError);
+      }
+  });
+}
+
+global.historicoData = null;
+const fs = require('fs');
+
+const caminhoArquivo = 'historico.json';
+
+function lerArquivoJSON(caminho) {
+  return new Promise((resolve, reject) => {
+    fs.readFile(caminho, 'utf8', (err, data) => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      try {
+        const jsonData = JSON.parse(data);
+        resolve(jsonData);
+      } catch (parseError) {
+        reject(parseError);
+      }
+    });
+  });
+}
+
+// Uso da função para ler o arquivo JSON
+lerArquivoJSON(caminhoArquivo)
+  .then(data => {
+    global.historicoData = data;
+    // Você pode manipular os dados aqui
+  })
+  .catch(error => {
+    console.error('Erro ao ler o arquivo JSON:', error);
+  });
+
 app.use(cors());
 
 app.use(serveStatic(__dirname));
 
 app.get('/generate-text', async (req, res) => {
+
   const text = req.query.text;
-  const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text}`;
+  const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta: ${text}`;
   const chat = model.startChat({
-    generationConfig, safetySettings, history: [],
+    generationConfig, safetySettings, history: global.historicoData
   });
   const result = await chat.sendMessage(prompt);
   const response = result.response;
+
+  const novoPrompt = 
+    {
+      "role": "user",
+      "parts": [
+        { "text": text }
+      ]
+    };
+
+    const novaResposta = 
+    {
+      "role": "model",
+      "parts": [
+        { "text": response.text() }
+      ]
+    }
+
+  escreverArquivoJSON(novoPrompt, novaResposta);
+
   res.send(response.text());
 });
 
