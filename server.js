@@ -109,7 +109,7 @@ app.use(serveStatic(__dirname));
 app.get('/generate-text', async (req, res) => {
 
   const text = req.query.text;
-  const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta: ${text}`;
+  const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text}`;
   const chat = model.startChat({
     generationConfig, safetySettings, history: global.historicoData
   });
