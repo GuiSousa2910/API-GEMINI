@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const serveStatic = require('serve-static');
+const fs = require('fs');
 const { GoogleGenerativeAI, HarmCategory, HarmBlockThreshold } = require('@google/generative-ai');
 
 const app = express();
@@ -40,83 +41,83 @@ const safetySettings = [
   },
 ];
 
-function escreverArquivoJSON(novoPrompt, novaResposta) {
+  function escreverArquivoJSON(novoPrompt, novaResposta) {
 
-  // Leitura do arquivo JSON existente
-  fs.readFile('historico.json', 'utf8', (err, data) => {
+    // Leitura do arquivo JSON existente
+    fs.readFile('historico.json', 'utf8', (err, data) => {
       if (err) {
-          console.error('Erro ao ler o arquivo JSON:', err);
-          return;
-      }
-
-      try {
-          const historico = JSON.parse(data);
-
-          historico.push(novoPrompt);
-          historico.push(novaResposta);
-          const jsonDados = JSON.stringify(historico, null, 2);
-
-          // Escreve os dados atualizados no arquivo JSON
-          fs.writeFile('historico.json', jsonDados, 'utf8', err => {
-              if (err) {
-                  console.error('Erro ao escrever no arquivo JSON:', err);
-                  return;
-              }
-              console.log('Novas informações adicionadas com sucesso ao arquivo JSON.');
-          });
-      } catch (parseError) {
-          console.error('Erro ao analisar o arquivo JSON:', parseError);
-      }
-  });
-}
-
-global.historicoData = null;
-const fs = require('fs');
-
-const caminhoArquivo = 'historico.json';
-
-function lerArquivoJSON(caminho) {
-  return new Promise((resolve, reject) => {
-    fs.readFile(caminho, 'utf8', (err, data) => {
-      if (err) {
-        reject(err);
+        console.error('Erro ao ler o arquivo JSON:', err);
         return;
       }
+
       try {
-        const jsonData = JSON.parse(data);
-        resolve(jsonData);
+        const historico = JSON.parse(data);
+
+        historico.push(novoPrompt);
+        historico.push(novaResposta);
+        const jsonDados = JSON.stringify(historico, null, 2);
+
+        // Escreve os dados atualizados no arquivo JSON
+        fs.writeFile('historico.json', jsonDados, 'utf8', err => {
+          if (err) {
+            console.error('Erro ao escrever no arquivo JSON:', err);
+            return;
+          }
+          console.log('Novas informações adicionadas com sucesso ao arquivo JSON.');
+        });
       } catch (parseError) {
-        reject(parseError);
+        console.error('Erro ao analisar o arquivo JSON:', parseError);
       }
     });
-  });
-}
+  }
 
-// Uso da função para ler o arquivo JSON
-lerArquivoJSON(caminhoArquivo)
-  .then(data => {
-    global.historicoData = data;
-    // Você pode manipular os dados aqui
-  })
-  .catch(error => {
-    console.error('Erro ao ler o arquivo JSON:', error);
-  });
+  global.historicoData = null;
 
-app.use(cors());
+  const caminhoArquivo = 'historico.json';
 
-app.use(serveStatic(__dirname));
 
-app.get('/generate-text', async (req, res) => {
+  function lerArquivoJSON(caminho) {
+    return new Promise((resolve, reject) => {
+      fs.readFile(caminho, 'utf8', (err, data) => {
+        if (err) {
+          reject(err);
+          return;
+        }
+        try {
+          const jsonData = JSON.parse(data);
+          resolve(jsonData);
+        } catch (parseError) {
+          reject(parseError);
+        }
+      });
+    });
+  }
 
-  const text = req.query.text;
-  const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text}`;
-  const chat = model.startChat({
-    generationConfig, safetySettings, history: global.historicoData
-  });
-  const result = await chat.sendMessage(prompt);
-  const response = result.response;
+  // Uso da função para ler o arquivo JSON
+  lerArquivoJSON(caminhoArquivo)
+    .then(data => {
+      global.historicoData = data;
+      // Você pode manipular os dados aqui
+    })
+    .catch(error => {
+      console.error('Erro ao ler o arquivo JSON:', error);
+    });
 
-  const novoPrompt = 
+  app.use(cors());
+
+  app.use(serveStatic(__dirname));
+
+  app.get('/generate-text', async (req, res) => {
+
+    const text = req.query.text;
+    const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley', se a pergunta não for sobre 'Stardew Valley, escreva apenas 'Esta pergunta não pode estar relacionada a 'Stardew Valley'!': ${text}`;
+    const chat = model.startChat({
+      generationConfig, safetySettings, history: global.historicoData
+    });
+    const result = await chat.sendMessage(prompt);
+    const response = result.response;
+
+    const novoPrompt =
     {
       "role": "user",
       "parts": [
@@ -124,19 +125,18 @@ app.get('/generate-text', async (req, res) => {
       ]
     };
 
-    const novaResposta = 
+    const novaResposta =
     {
       "role": "model",
       "parts": [
         { "text": response.text() }
       ]
-    }
+    };
 
-  escreverArquivoJSON(novoPrompt, novaResposta);
+    escreverArquivoJSON(novoPrompt, novaResposta);
 
-  res.send(response.text());
-});
-
+    res.send(response.text());
+  });
 app.listen(port, () => {
   console.log(`Acesse o caminho a seguir para visualizar .: http://localhost:${port}/ia.html :.`);
 });
