@@ -1,5 +1,5 @@
 function apagar() {
-    document.getElementById('tudao').style.paddingBottom = '10%';
+    document.getElementById('tudao').style.paddingBottom = '5%';
     document.getElementById('carregamento').style.display = 'none';
     document.getElementById('response').style.display = 'none';
 }

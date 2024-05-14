@@ -110,7 +110,7 @@ const safetySettings = [
   app.get('/generate-text', async (req, res) => {
 
     const text = req.query.text;
-    const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley', se a pergunta não for sobre 'Stardew Valley, escreva apenas 'Esta pergunta não pode estar relacionada a 'Stardew Valley'!': ${text}`;
+    const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text} em Stardew Valley`;
     const chat = model.startChat({
       generationConfig, safetySettings, history: global.historicoData
     });
