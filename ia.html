@@ -7,9 +7,10 @@
     <title>Chat com IA</title>
     <link rel="stylesheet" href="ia.css">
     <link rel="icon" href="assets/galinha.png">
+    <script src="server.js"></script>
 </head>
 
-<body onload="apagar()">
+<body onpageshow="apagar()">
     <div class="fundo">
         <div class="nav">
             <img src="assets/galinha.png" alt="galinha">
@@ -23,12 +24,13 @@
             <div class="textos" id="tudao">
                 <div class="textos-titulo">
                     <h1>Chat com IA</h1>
-                    <p>Alguma dúvida sobre <span style="color: green; font-weight: bolder;">Stardew Valley?</span> Pergunta para a nossa IA!!</p>
+                    <p>Alguma dúvida sobre <span style="color: green; font-weight: bolder;">Stardew Valley?</span>
+                        Pergunta para a nossa IA!!</p>
                 </div>
                 <div class="textos-input" onchange="verificar()">
                     <textarea oninput="abilitar(), verificar()" onfocus="abilitar()" rows="5" type="text" id="userInput"
                         placeholder="Digite sua mensagem"></textarea>
-                    <button onclick="carregar()" onkeydown="carregar()" id="sendButton" disabled><img
+                    <button onclick="carregar()"  onclick="apagar()" onkeydown="carregar()" id="sendButton" disabled><img
                             src="assets/next.png" alt="" class="botao-img"></button>
                 </div>
                 <img id="carregamento" src="assets/Ellipsis@1x-4.8s-200px-200px (2).gif" alt="">
