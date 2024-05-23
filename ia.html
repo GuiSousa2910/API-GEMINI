@@ -16,7 +16,7 @@
             <img src="assets/galinha.png" alt="galinha">
             <div class="nav-list">
                 <div class="sobre">
-                    <a href="http://localhost:3333/indexLogado.html">Home</a>
+                    <a href="http://localhost:3333/indexLogado.html">Voltar</a>
                 </div>
             </div>
         </div>
@@ -47,7 +47,7 @@
 
             sendButton.addEventListener('click', async () => {
                 const text = userInput.value;
-                const response = await fetch(`/generate-text?text=${encodeURIComponent(text)}`);
+                const response = await fetch(`/generate-text?text=${encodeURIComponent(text)}`); // encodeURIComponent transforma o texto em hexadecimal
                 const data = await response.text();
                 document.getElementById('carregamento').style.display = 'none';
                 document.getElementById('response').style.display = 'flex';
