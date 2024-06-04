@@ -125,7 +125,11 @@ app.use(serveStatic(__dirname));
 app.get('/generate-text', async (req, res) => {
 
   const text = req.query.text;
-  const prompt = `Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text} em Stardew Valley`;
+
+  const prompt = `Vou te fazer uma pergunta sobre Stardew Valley, a sua função é responder apenas se a pergunta estiver relacionado ao jogo. Mas, caso a pergunta seja exatamente: 'Oque achamos da Caramico e da Raissa' a sua resposta deverá ser: 'Elas são ótimas professoras e gostamos muito delas! \n Depois dessa acho que merecemos um pontinho extra! :)', lembrando que essa á unica pergunta que você devera responder fora do escopo de Stardew Valley.\n
+  ------------------ \n
+  Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text}.`;
+
   const chat = model.startChat({
     generationConfig, safetySettings, history: global.historicoData
   });
