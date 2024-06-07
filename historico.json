@@ -590,5 +590,357 @@
         "text": "Sua última pergunta foi: \"Oque achamos da Caramico e da Raissa\"."
       }
     ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Qual a melhor fruta do jogo\n"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "A melhor fruta em Stardew Valley depende das preferências pessoais do jogador, mas algumas das frutas mais populares e valiosas incluem:\n\n* **Morango:** Uma das primeiras frutas disponíveis no jogo, os morangos são fáceis de cultivar e vendem por um bom preço.\n* **Mirtilo:** Os mirtilos são outra fruta popular que pode ser vendida por um bom preço. Eles também são usados ​​em vários pratos e receitas.\n* **Romã:** As romãs são uma fruta valiosa que pode ser vendida por um preço alto. Eles também são usados ​​para fazer vinho, que pode ser vendido por ainda mais dinheiro.\n* **Pêssego:** Os pêssegos são uma fruta de verão que pode ser vendida por um bom preço. Eles também são usados ​​em várias receitas.\n* **Damasco:** Os damascos são uma fruta de verão que pode ser vendida por um bom preço. Eles também são usados ​​para fazer vinho, que pode ser vendido por ainda mais dinheiro.\n\nEm última análise, a melhor fruta em Stardew Valley é aquela que o jogador mais gosta de cultivar e vender."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "qual barulho a galinha emite"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "As galinhas em Stardew Valley emitem o som \"cluck\"."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "imite uma galinha"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "**Cocoricó!**"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "qual peixe tem o menor preço"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "O peixe com o menor preço em Stardew Valley é o **Sardinha**, que pode ser vendido por **5 ouros**."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "qual foi  a minha ultima pergunta"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Sua última pergunta foi: \"Qual peixe tem o menor preço?\"."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Qual a galinha mais barulhenta"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Não há uma galinha específica em Stardew Valley que seja considerada a mais barulhenta. Todas as galinhas emitem o mesmo som de \"cacarejar\"."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Qual personagem mais alto"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "O personagem mais alto em Stardew Valley é **Krobus**, o Shadow Person que vive nos esgotos."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Qual a altura dele"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Krobus, o Shadow Person que vive nos esgotos em Stardew Valley, tem **10 pés (3,05 metros)** de altura."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Faça uma tabela com  o preço de todos os peixes"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "**Tabela de Preços de Peixes em Stardew Valley**\n\n| Peixe | Preço de Venda |\n|---|---|\n| Sardinha | 5 ouros |\n| Arenque | 10 ouros |\n| Salmão | 15 ouros |\n| Tilápia | 20 ouros |\n| Truta | 25 ouros |\n| Linguado | 30 ouros |\n| Baiacu | 35 ouros |\n| Lula | 40 ouros |\n| Caranguejo | 45 ouros |\n| Lagosta | 50 ouros |\n| Ouriço-do-mar | 55 ouros |\n| Água-viva | 60 ouros |\n| Peixe-espada | 65 ouros |\n| Esturjão | 70 ouros |\n| Robalo | 75 ouros |\n| Atum | 80 ouros |\n| Bonito | 85 ouros |\n| Dourado | 90 ouros |\n| Tamboril | 95 ouros |\n| Peixe-palhaço | 100 ouros |\n| Peixe-anjo | 105 ouros |\n| Peixe-borboleta | 110 ouros |\n| Peixe-leão | 115 ouros |\n| Peixe-papagaio | 120 ouros |\n| Peixe-cirurgião | 125 ouros |\n| Peixe-bailarino | 130 ouros |\n| Lendário Peixe | 10.000 ouros |\n\nObserve que os preços dos peixes podem variar dependendo do seu nível de habilidade de pesca e se você está usando iscas ou não."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Dentre esses peixes, qual o mais caro de se vender"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "O peixe mais caro para vender em Stardew Valley é o **Lendário Peixe**, que pode ser vendido por **10.000 ouros**."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantos peixes existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Existem **82 tipos** de peixes em Stardew Valley."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Item mais forte do jogo"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "**Item mais forte do jogo**\n\nO item mais forte em Stardew Valley é a **Espada Galáxia**, que pode ser obtida completando a missão \"A Espada Perdida\". A Espada Galáxia tem 120 de dano, o que a torna a arma mais poderosa do jogo."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Cite todos os personagens"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "**Todos os personagens em Stardew Valley:**\n\n* Abigail\n* Alex\n* Caroline\n* Clint\n* Demetrius\n* Dwarf\n* Elliot\n* Emily\n* Evelyn\n* George\n* Gus\n* Haley\n* Harvey\n* Jas\n* Jodi\n* Kent\n* Krobus\n* Leah\n* Leo\n* Lewis\n* Linus\n* Marnie\n* Maru\n* Pam\n* Penny\n* Pierre\n* Robin\n* Sam\n* Sandy\n* Sebastian\n* Shane\n* Vincent\n* Willy\n* Wizard"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Como pegar a galinha azul"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Para pegar a galinha azul em Stardew Valley, você precisa construir uma **Galinheiro Deluxe** e depois comprar uma **Galinha Azul** de Marnie no Rancho Marnie. As Galinhas Azuis põem ovos azuis, que podem ser vendidos por um preço mais alto do que os ovos normais."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantos personagens existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "14"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantos personagens existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Stardew Valley é um jogo de simulação de vida que apresenta um elenco diversificado de personagens. Existem 30 personagens principais no jogo, cada um com sua própria história, personalidade e relacionamentos únicos. Os jogadores podem interagir com esses personagens construindo relacionamentos, dando presentes e completando missões. Os personagens também desempenham um papel na comunidade do jogo, trabalhando em vários empregos e participando de eventos."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantos personagens existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "**Personagens Principais (30)**\n\n* Abigail\n* Alex\n* Caroline\n* Clint\n* Demetrius\n* Dwarf\n* Elliot\n* Emily\n* Evelyn\n* George\n* Gus\n* Haley\n* Harvey\n* Jas\n* Jodi\n* Kent\n* Krobus\n* Leah\n* Leo\n* Lewis\n* Linus\n* Marnie\n* Maru\n* Pam\n* Penny\n* Pierre\n* Robin\n* Sam\n* Sandy\n* Sebastian\n* Shane\n* Vincent\n* Willy\n* Wizard\n\n**Personagens Secundários (12)**\n\n* Birdie\n* Bouncer\n* Gil\n* Gunther\n* Marlon\n* Morris\n* M. Qi\n* Pierre's Wife\n* Sandy's Father\n* Traveling Merchant\n* Professor Snail\n* Dr. Harvey (pai de Harvey)\n\n**Total de Personagens: 42**\n\nAlém desses personagens, existem também vários NPCs (personagens não jogáveis) menores que aparecem no jogo, como os aldeões que participam de eventos da comunidade e os clientes que visitam as lojas."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Qual a semente para plantar na primavera "
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Batata"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Qual a semente para plantar na primavera "
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "**Sementes que podem ser plantadas na primavera em Stardew Valley:**\n\n* Batata\n* Couve-flor\n* Couve\n* Feijão verde\n* Morango\n* Rabanete\n* Tulipas"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Qual a melhor semente para plantar na primavera "
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Morango"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantos custa um morango"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "100 ouros"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quanto custa o ovo de galinha azul"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "2.000 ouros"
+      }
+    ]
   }
 ]

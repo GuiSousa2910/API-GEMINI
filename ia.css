@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');
 
 * {
@@ -179,7 +178,8 @@ button:disabled {
     border: black 2px solid;
     cursor: auto;
 }
-button .botao-img{
+
+button .botao-img {
     border-radius: 100%;
 }
 
@@ -187,6 +187,32 @@ button .botao-img{
     display: none;
 }
 
+select {
+    height: 4rem;
+    width: 13rem;
+    border-radius: 30px;
+    font-family: "Pixelify Sans", sans-serif;
+    text-align: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: #63fd63 5px dashed;
+    font-size: 15px;
+    font-weight: bolder;
+    outline: none;
+}
+
+select:focus {
+    border: #57ff57 5px solid;
+}
+
+select:hover {
+    border: #57ff57 5px solid;
+}
+
+option {
+    font-size: 15px;
+    font-weight: bolder;
+}
 
 #response {
     width: 70%;
@@ -198,7 +224,7 @@ button .botao-img{
     margin-bottom: 10%;
     padding: 20px;
     background-color: white;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
     border-radius: 20px;
     border: green 2px solid;

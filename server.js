@@ -125,10 +125,29 @@ app.use(serveStatic(__dirname));
 app.get('/generate-text', async (req, res) => {
 
   const text = req.query.text;
+  const tamanho = req.query.tamanho;
+  var grandeza = '';
+
+  if (tamanho == '#') {
+    grandeza = 'comum';
+    console.log('comum');
+  }
+  else if (tamanho == 'grande') {
+    grandeza = 'grande';
+    console.log('grande');
+  }
+  else if (tamanho == 'medio') {
+    grandeza = 'mediano';
+    console.log('medio');
+  }
+  else if (tamanho == 'peq') {
+    grandeza = 'pequeno';
+    console.log('pequeno');
+  }
 
   const prompt = `Vou te fazer uma pergunta sobre Stardew Valley, a sua função é responder apenas se a pergunta estiver relacionado ao jogo. Mas, caso a pergunta seja exatamente: 'Oque achamos da Caramico e da Raissa' a sua resposta deverá ser: 'Elas são ótimas professoras e gostamos muito delas! \n Depois dessa acho que merecemos um pontinho extra! :)', lembrando que essa á unica pergunta que você devera responder fora do escopo de Stardew Valley.\n
   ------------------ \n
-  Por favor, forneça uma resposta de tamanho mediano para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text}.`;
+  Por favor, forneça uma resposta de tamanho ${grandeza} para a seguinte pergunta sobre o jogo 'Stardew Valley': ${text}.`;
 
   const chat = model.startChat({
     generationConfig, safetySettings, history: global.historicoData
@@ -136,7 +155,7 @@ app.get('/generate-text', async (req, res) => {
   const result = await chat.sendMessage(prompt);
   const response = result.response;
 
-  fetch("http://localhost:3000/usuarios/cadastrar", {
+  fetch("http://10.18.33.58:3000/usuarios/cadastrar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -181,5 +200,5 @@ app.get('/generate-text', async (req, res) => {
   res.send(response.text());
 });
 app.listen(port, () => {
-  console.log(`Acesse o caminho a seguir para visualizar .: http://localhost:${port}/ia.html :.`);
+  console.log(`Acesse o caminho a seguir para visualizar .: http://10.18.33.58:${port}/ia.html :.`);
 });
