@@ -942,5 +942,85 @@
         "text": "2.000 ouros"
       }
     ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantas galinhas existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "12"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantas galinhas existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "12"
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantas galinhas existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Stardew Valley permite que os jogadores criem até **12 galinhas** em seus galinheiros. As galinhas fornecem ovos, que podem ser usados ​​para cozinhar, fazer maionese ou vender para obter lucro. Os jogadores podem melhorar a qualidade dos ovos de suas galinhas construindo galinheiros melhores e mantendo-as felizes e bem alimentadas."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Quantas galinhas existem"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "**Criação de Galinhas em Stardew Valley**\n\nStardew Valley oferece aos jogadores a oportunidade de criar galinhas como parte de suas atividades agrícolas. As galinhas fornecem ovos, que são um ingrediente valioso para cozinhar, fazer maionese ou vender para obter lucro. Os jogadores podem criar até **12 galinhas** em seus galinheiros, que podem ser atualizados para acomodar mais galinhas e fornecer melhores condições de vida.\n\nPara obter galinhas, os jogadores podem comprá-las no Rancho Marnie. As galinhas vêm em diferentes variedades, cada uma com suas próprias características e preços. Os jogadores também podem chocar seus próprios ovos de galinha colocando-os em uma incubadora no galinheiro.\n\nAs galinhas precisam ser alimentadas diariamente com feno ou grama. Elas também precisam de acesso à água fresca. Os jogadores podem melhorar a qualidade dos ovos de suas galinhas mantendo-as felizes e bem alimentadas. Galinhas felizes põem ovos de qualidade mais alta, que podem ser vendidos por um preço mais alto.\n\nAlém de fornecer ovos, as galinhas também podem fornecer penas, que podem ser usadas para fazer chapéus e outros itens. As galinhas também podem ser usadas para participar de feiras, onde podem ser julgadas com base em sua aparência e qualidade de ovos.\n\nA criação de galinhas em Stardew Valley pode ser uma atividade lucrativa e gratificante. Os jogadores podem obter uma renda estável vendendo ovos e outros produtos de galinha. As galinhas também podem fornecer aos jogadores alimentos e outros recursos valiosos."
+      }
+    ]
+  },
+  {
+    "role": "user",
+    "parts": [
+      {
+        "text": "Oque achamos da Caramico e da Raissa"
+      }
+    ]
+  },
+  {
+    "role": "model",
+    "parts": [
+      {
+        "text": "Elas são ótimas professoras e gostamos muito delas! \n Depois dessa acho que merecemos um pontinho extra! :)"
+      }
+    ]
   }
 ]

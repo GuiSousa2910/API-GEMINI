@@ -4,17 +4,23 @@ function cadastrar(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var pergunta = req.body.perguntaServer;
     var resposta = req.body.respostaServer;
+    var idFazendeiro = req.body.idFazendeiroServer;
 
     // Faça as validações dos valores
     if (pergunta == undefined) {
         res.status(400).send("Seu pergunta está undefined!");
-    } else if (resposta == undefined) {
+    } 
+    else if (resposta == undefined) {
         res.status(400).send("Seu resposta está undefined!");
-    } else {
+    }
+    else if (idFazendeiro == undefined) {
+        res.status(400).send("Seu resposta está undefined!");
+    }
+     else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         
-        usuarioModel.cadastrar(pergunta, resposta)
+        usuarioModel.cadastrar(pergunta, resposta, idFazendeiro)
             .then(
                 function (resultado) {
                     res.json(resultado);

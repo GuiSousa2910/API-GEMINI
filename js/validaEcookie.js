@@ -1,5 +1,4 @@
 var espressaoBooleana = false;
-let idBotao = document.getElementById('sendButton');
 
 function abilitar() {
     var informacao = userInput.value;
@@ -19,3 +18,7 @@ function verificar() {
         document.getElementById('sendButton').setAttribute('disabled', true);
     }
 }
+
+// window.validaEcookie = {
+//     Fazcookie
+// }

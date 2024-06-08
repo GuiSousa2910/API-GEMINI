@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+// var cookie = require("./js/validaEcookie"); 
 const serveStatic = require('serve-static');
 var path = require("path");
 const fs = require('fs');
@@ -126,23 +127,20 @@ app.get('/generate-text', async (req, res) => {
 
   const text = req.query.text;
   const tamanho = req.query.tamanho;
+  const idFazendeiro = req.query.idFazendeiro
   var grandeza = '';
 
   if (tamanho == '#') {
     grandeza = 'comum';
-    console.log('comum');
   }
   else if (tamanho == 'grande') {
     grandeza = 'grande';
-    console.log('grande');
   }
   else if (tamanho == 'medio') {
     grandeza = 'mediano';
-    console.log('medio');
   }
   else if (tamanho == 'peq') {
     grandeza = 'pequeno';
-    console.log('pequeno');
   }
 
   const prompt = `Vou te fazer uma pergunta sobre Stardew Valley, a sua função é responder apenas se a pergunta estiver relacionado ao jogo. Mas, caso a pergunta seja exatamente: 'Oque achamos da Caramico e da Raissa' a sua resposta deverá ser: 'Elas são ótimas professoras e gostamos muito delas! \n Depois dessa acho que merecemos um pontinho extra! :)', lembrando que essa á unica pergunta que você devera responder fora do escopo de Stardew Valley.\n
@@ -155,7 +153,7 @@ app.get('/generate-text', async (req, res) => {
   const result = await chat.sendMessage(prompt);
   const response = result.response;
 
-  fetch("http://10.18.33.58:3000/usuarios/cadastrar", {
+  fetch("http://localhost:3000/usuarios/cadastrar", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -164,9 +162,10 @@ app.get('/generate-text', async (req, res) => {
 
       perguntaServer: text,
       respostaServer: response.text(),
+      idFazendeiroServer: idFazendeiro
     }),
   })
-    .then(function (resposta) {
+    .then(function (resposta) { 
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
@@ -177,7 +176,6 @@ app.get('/generate-text', async (req, res) => {
     })
     .catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
-
     });
   const novoPrompt =
   {

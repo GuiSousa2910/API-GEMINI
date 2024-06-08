@@ -15,7 +15,7 @@
             <img src="assets/galinha.png" alt="galinha">
             <div class="nav-list">
                 <div class="sobre">
-                    <a href="http://10.18.33.58:3333/indexLogado.html">Voltar</a>
+                    <a href="http://localhost:3333/indexLogado.html">Voltar</a>
                 </div>
             </div>
         </div>
@@ -42,7 +42,7 @@
                 <div id="response"></div>
             </div>
         </div>
-        <script src="js/validacao.js"></script>
+        <script src="js/validaEcookie.js"></script>
         <script src="js/carregamento.js"></script>
         <script>
             const userInput = document.getElementById('userInput');
@@ -50,15 +50,25 @@
             const responseDiv = document.getElementById('response');
             const selectTamanho = document.getElementById('select_tamanho');
 
+            function Fazcookie(id) {
+                const value = "; " + document.cookie;
+                const partes = value.split("; " + id + "=");
+                if (partes.length === 2) {
+                    return partes.pop().split(";").shift(); //.pop => remove o ultimo elemento do cookie .split => separa o array pelo ; e .shift => remove e retorna o primeiro elemento do novo array
+                }
+            }
+            const idFazendeiro = Fazcookie("idFazendeiro");
+
             sendButton.addEventListener('click', async () => {
                 const text = userInput.value;
                 const tamanho = select_tamanho.value;
-                const response = await fetch(`/generate-text?text=${encodeURIComponent(text)}&tamanho=${tamanho}`); // encodeURIComponent transforma o texto em hexadecimal
+                const response = await fetch(`/generate-text?text=${encodeURIComponent(text)}&tamanho=${tamanho}&idFazendeiro=${idFazendeiro}`); // encodeURIComponent transforma o texto em hexadecimal
                 const data = await response.text();
                 document.getElementById('carregamento').style.display = 'none';
                 document.getElementById('response').style.display = 'flex';
                 responseDiv.innerText = data;
             });
+
         </script>
         <script src="server.js"></script>
 </body>
